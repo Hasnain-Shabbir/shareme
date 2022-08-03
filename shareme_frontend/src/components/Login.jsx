@@ -8,6 +8,7 @@ import { client } from '../client';
 
 const Login = () => {
   const navigate = useNavigate();
+
   gapi.load('client:auth2', () => {
     gapi.client.init({
       clientId:
