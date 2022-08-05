@@ -63,10 +63,10 @@ const CreatePin = ({ user }) => {
             _ref: imageAsset?._id,
           },
         },
-        userId: user._id,
+        userId: user?._id,
         postedBy: {
           _type: 'postedBy',
-          _ref: user._id,
+          _ref: user?._id,
         },
         category,
       };
@@ -143,11 +143,11 @@ const CreatePin = ({ user }) => {
           {user && (
             <div className='flex gap-2 my-2 items-center bg-white rounded-lg'>
               <img
-                src={user.image}
+                src={user?.image}
                 className='w-10 h-10 rounded-full'
                 alt='user-pic'
               />
-              <p className='font-bold'>{user.userName}</p>
+              <p className='font-bold'>{user?.userName}</p>
             </div>
           )}
           <input
@@ -179,9 +179,9 @@ const CreatePin = ({ user }) => {
                 {categories.map((category) => (
                   <option
                     className='text-base border-0 outline-none capitalize bg-white text-black'
-                    value={category.name}
+                    value={category?.name}
                   >
-                    {category.name}
+                    {category?.name}
                   </option>
                 ))}
               </select>

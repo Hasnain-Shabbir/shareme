@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { client } from '../client';
-// import { Spinner, MasonryLayout } from './components';
-import Spinner from './Spinner';
-import MasonryLayout from './MasonryLayout';
+import { Spinner, MasonryLayout } from '.';
 import { searchQuery, feedQuery } from '../utils/data';
 
 const Feed = () => {

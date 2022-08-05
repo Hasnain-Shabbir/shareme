@@ -11,8 +11,7 @@ const Login = () => {
 
   gapi.load('client:auth2', () => {
     gapi.client.init({
-      clientId:
-        '818320415773-ide7nc46cjq99j9l7timoidltqqil4dm.apps.googleusercontent.com',
+      clientId: process.env.REACT_APP_GOOGLE_API_TOKEN,
       plugin_name: 'chat',
     });
   });

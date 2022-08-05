@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { RiHomeFill } from 'react-icons/ri';
-import { IoIoArrowForward } from 'react-icons/io';
 import { categories } from '../utils/data';
 import { logo } from '../assets';
 
@@ -40,37 +39,37 @@ const Sidebar = ({ user, closeToggle }) => {
           <h3 className='mt-2 px-5 text-base 2xl:text-xl'>
             Discover Categories
           </h3>
-          {categories.slice(0, categories.length - 1).map((category) => (
+          {categories.slice(0, categories?.length - 1).map((category) => (
             <NavLink
               to={`/category/${category.name}`}
               className={({ isActive }) =>
                 isActive ? isActiveStyle : isNotActiveStyle
               }
               onClick={handleCloseSidebar}
-              key={category.name}
+              key={category?.name}
             >
               <img
-                src={category.image}
+                src={category?.image}
                 alt='category'
                 className='w-8 h-8 rounded-full shadow-sm'
               />
-              {category.name}
+              {category?.name}
             </NavLink>
           ))}
         </div>
       </div>
       {user && (
         <Link
-          to={`user-profile/${user._id}`}
+          to={`user-profile/${user?._id}`}
           className='flex my-5 mb-3 gap-2 items-center p-2 bg-white rounded-lg shadow-lg mx-3'
           onClick={handleCloseSidebar}
         >
           <img
-            src={user.image}
+            src={user?.image}
             className='w-10 h-10  rounded-full'
             alt='user-profile'
           />
-          <p>{user.userName}</p>
+          <p>{user?.userName}</p>
         </Link>
       )}
     </div>

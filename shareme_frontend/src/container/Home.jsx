@@ -4,7 +4,7 @@ import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Sidebar, UserProfile } from '../components';
 import { client } from '../client';
-import logo from '../assets/logo.png';
+import { logo } from '../assets';
 import { Pins } from '.';
 import { userQuery } from '../utils/data';
 import { fetchUser } from '../utils/fetchUser';

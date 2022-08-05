@@ -4,9 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import { client, urlFor } from '../client';
-import MasonryLayout from './MasonryLayout';
 import { pinDetailMorePinQuery, pinDetailQuery } from '../utils/data';
-import { Spinner } from '.';
+import { Spinner, MasonryLayout } from '.';
 
 const PinDetail = ({ user }) => {
   const [pins, setPins] = useState(null);
@@ -28,7 +27,7 @@ const PinDetail = ({ user }) => {
             _key: uuidv4(),
             postedBy: {
               _type: 'postedBy',
-              _ref: user._id,
+              _ref: user?._id,
             },
           },
         ])
@@ -71,7 +70,7 @@ const PinDetail = ({ user }) => {
       >
         <div className='flex justify-center items-center md:items-start flex-initial'>
           <img
-            src={pinDetail?.image && urlFor(pinDetail.image).url()}
+            src={pinDetail?.image && urlFor(pinDetail?.image).url()}
             alt='user-post'
             className='rounded-t-3xl rounded-b-lg'
           />
@@ -80,7 +79,7 @@ const PinDetail = ({ user }) => {
           <div className='flex items-center justify-between'>
             <div className='flex gap-2 items-center'>
               <a
-                href={`${pinDetail.image.asset.url}?dl=`}
+                href={`${pinDetail?.image?.asset?.url}?dl=`}
                 download
                 onClick={(e) => e.stopPropagation()}
                 className='bg-white w-9 h-9 rounded-full flex items-center justify-center text-dark text-xl opacity-75 hover:opacity-100 hover:shadow-md outline-none'
@@ -88,27 +87,27 @@ const PinDetail = ({ user }) => {
                 <MdDownloadForOffline />
               </a>
             </div>
-            <a href={pinDetail.destination} target='_blank' rel='noreferrer'>
-              {pinDetail.destination}
+            <a href={pinDetail?.destination} target='_blank' rel='noreferrer'>
+              {pinDetail?.destination}
             </a>
           </div>
           <div>
             <h1 className='text-4xl font-bold break-words mt-3'>
-              {pinDetail.title}
+              {pinDetail?.title}
             </h1>
-            <p className='mt-3'>{pinDetail.about}</p>
+            <p className='mt-3'>{pinDetail?.about}</p>
           </div>
           <Link
-            to={`user-profile/${pinDetail.postedBy?._id}`}
+            to={`user-profile/${pinDetail?.postedBy?._id}`}
             className='flex gap-2 mt-5 items-center bg-white rounded-lg'
           >
             <img
-              src={pinDetail.postedBy?.image}
+              src={pinDetail?.postedBy?.image}
               alt='user-profile'
               className='w-8 h-8 rounded-full object-cover'
             />
             <p className='font-semibold capitalize'>
-              {pinDetail.postedBy?.userName}
+              {pinDetail?.postedBy?.userName}
             </p>
           </Link>
           <h2 className='mt-5 text-2xl'>Comments</h2>
@@ -132,11 +131,11 @@ const PinDetail = ({ user }) => {
           </div>
           <div className='flex flex-wrap mt-6 gap-3'>
             <Link
-              to={`user-profile/${pinDetail.postedBy?._id}`}
+              to={`user-profile/${pinDetail?.postedBy?._id}`}
               className='flex items-center'
             >
               <img
-                src={pinDetail.postedBy?.image}
+                src={pinDetail?.postedBy?.image}
                 alt='user-profile'
                 className='w-10 h-10 rounded-full cursor-pointer'
               />
