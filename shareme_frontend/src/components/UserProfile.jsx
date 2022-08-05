@@ -9,7 +9,7 @@ import {
   userSavedPinsQuery,
 } from './../utils/data';
 import { client } from '../client';
-import { MasonryLayout, Spinner } from './components';
+import { MasonryLayout, Spinner } from '.';
 
 const randomImage =
   'https://source.unsplash.com/1600x900/?nature,photography,technology';

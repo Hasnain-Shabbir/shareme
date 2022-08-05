@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { Sidebar, UserProfile } from '../components/components';
+import { Sidebar, UserProfile } from '../components';
 import { client } from '../client';
 import logo from '../assets/logo.png';
-import { Pins } from './container';
+import { Pins } from '.';
 import { userQuery } from '../utils/data';
 import { fetchUser } from '../utils/fetchUser';
 

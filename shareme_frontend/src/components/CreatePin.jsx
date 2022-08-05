@@ -4,7 +4,7 @@ import { MdDelete } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../client';
-import { Spinner } from './components';
+import { Spinner } from '.';
 import { categories } from '../utils/data';
 
 const CreatePin = ({ user }) => {

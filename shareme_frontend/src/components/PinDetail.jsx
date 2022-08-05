@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { client, urlFor } from '../client';
 import MasonryLayout from './MasonryLayout';
 import { pinDetailMorePinQuery, pinDetailQuery } from '../utils/data';
-import { Spinner } from './components';
+import { Spinner } from '.';
 
 const PinDetail = ({ user }) => {
   const [pins, setPins] = useState(null);

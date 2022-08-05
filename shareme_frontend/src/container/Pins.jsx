@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {
-  Navbar,
-  Feed,
-  PinDetail,
-  CreatePin,
-  Search,
-} from '../components/components';
+import { Navbar, Feed, PinDetail, CreatePin, Search } from '../components';
 // import Feed from '../components/Feed';
 
 const Pins = ({ user }) => {
