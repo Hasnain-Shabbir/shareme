@@ -1,6 +1,6 @@
 node_modules
 .env
-env
+.env/
 ../shareme_backend/node_modules
 ./shareme_backend/node_modules
 shareme_backend/node_modules
