@@ -8,10 +8,10 @@ import { fetchUser } from './utils/fetchUser';
 function App() {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const user = fetchUser();
-  //   if (!user) navigate('/login');
-  // }, []);
+  useEffect(() => {
+    const user = fetchUser();
+    if (!user) navigate('/login');
+  }, []);
 
   return (
     <Routes>
